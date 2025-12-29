@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Add Vehicle</h2>
+<form id="f" enctype="multipart/form-data">
+<input name="name" placeholder="Name"><br>
+<input name="type" placeholder="Type"><br>
+<input name="price" placeholder="Price"><br>
+<input name="location" placeholder="Location"><br>
+<input type="file" name="image"><br>
+<button>Add</button>
+</form>
+<div id="list"></div>
+<script>
+document.getElementById("f").onsubmit=async e=>{
+ e.preventDefault();
+ const fd=new FormData(f);
+ await fetch("http://localhost:5000/api/vehicles/add",{method:"POST",body:fd});
+ load();
+}
+async function load(){
+ const r=await fetch("http://localhost:5000/api/vehicles");
+ const d=await r.json();
+ list.innerHTML=d.map(v=>`<p>${v.name} <img width=80 src="http://localhost:5000/uploads/${v.image}"></p>`).join("");
+}
+load();
+</script>
+</body>
+</html>
