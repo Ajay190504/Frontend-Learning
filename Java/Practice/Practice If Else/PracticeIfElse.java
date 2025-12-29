@@ -109,7 +109,7 @@ public class PracticeIfElse {
             System.out.println("Not a Senior Citizen");
         }
 
-        //Accept a month number (1â€“12) and check if it belongs to summer, rainy, or winter season.
+        //Accept a month number (1–12) and check if it belongs to summer, rainy, or winter season.
         int month = 7;
         if (month == 3 || month == 4 || month == 5) {
             System.out.println("Summer Season");
