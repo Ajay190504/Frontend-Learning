@@ -22,17 +22,5 @@ public class EvenOdd {
 		else {
 			System.out.println(num+" is Even");
 		}
-
-		//using division operator
-		if((num/2)*2 == num) {
-			System.out.println(num+" is Even");
-		}
-		else {
-			System.out.println(num+" is Odd");
-		}
-
-		//using ternary operator
-		String result = (num%2==0) ? (num+" is Even") : (num+" is Odd");
-		System.out.println(result);
 	}
 }
