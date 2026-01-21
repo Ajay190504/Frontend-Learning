@@ -1,0 +1,26 @@
+
+Batch : 1306 :
+
+
+used Different Packages  : 
+
+ 
+Create a class Student with variables rollNo, name, and marks. Create an object and assign values to these variables.
+
+Write a program to create a class Employee having variables empId, empName, and salary. Print all variable values using an object.
+
+Create a class Car with variables brand, model, and price. Assign values using an object and display them.
+
+Define a class Book with variables bookId, title, and author. Create two objects and store different values.
+
+Create a class Mobile with variables company, color, and cost. Assign values and print them.
+
+Write a program to create a class College with variables collegeName, city, and rating. Access variables using an object.
+
+Create a class Laptop with variables ram, processor, and price. Create an object and initialize variables.
+
+Define a class Customer with variables customerId, customerName, and phoneNumber. Display all details using an object.
+
+Create a class BankAccount with variables accountNumber, accountHolderName, and balance. Assign values and print them.
+
+Write a program to create a class Bike with variables bikeName, engineCC, and price. Create an object and display values.

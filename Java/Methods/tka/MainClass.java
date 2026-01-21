@@ -1,0 +1,15 @@
+package com.tka;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		Calculator c = new Calculator();
+		c.myAddition();
+		c.mySubstraction();
+		c.myMultiplication();
+		c.myDivision();
+
+	}
+
+}

@@ -1,0 +1,75 @@
+
+
+
+What is a Method?
+
+A method is a block of code that performs a specific task and executes only when it is called.
+
+Definition :
+
+A method is a collection of statements grouped together to perform an operation.
+
+why methods : 
+
+Code reuse
+Code readability
+Reduces duplication
+Easy debugging
+Easy modification of logic
+
+
+syntax : 
+
+
+AccessSpecifier ReturnType MethodName(){
+
+
+}
+
+
+
+public void myAddition(){
+
+
+}
+
+
+Types of Methods in Java : 
+
+ -> Based on Return Type & Parameters 
+
+
+
+Parameterised Method with ReturnType
+Parameterised Method without ReturnType
+Non-Parameterised Method with Return 
+Non-Parameterised Method without ReturnType
+
+
+
+Naming Convection Rules to Declared an Methods : 
+
+1. method name should be Logical 
+2. can not used keywords as methods name 
+3. cannot start with capital letters 
+4. space not allowed 
+5. cannot start with numbers  
+
+
+Practise Questions on methods : 
+
+
+1. Write a method to print your name (no return, no parameters).
+2. Write a method to print the sum of two numbers (no return, with parameters).
+3. Write a method that returns your age (return type, no parameters).
+4. Write a method that returns the square of a number (return type, with parameters).
+5. Write a method to print the first 10 natural numbers.
+6. Write a method to check whether a number is even or odd.
+7. Write a method to calculate the factorial of a given number.
+8. Write a method to check if a number is prime or not.
+9. Write a method to return the largest of three numbers.
+10. Write a method to count the number of digits in a number.
+
+
+
+
