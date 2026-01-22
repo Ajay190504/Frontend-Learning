@@ -1,6 +1,6 @@
 package com.type2;
 //Type 2: Methods with return type and without parameters
-public class MethodsReturn {
+public class MethodsWithReturnNoParams {
 	
 	//1) Check Prime No Method
 	boolean isPrime() {

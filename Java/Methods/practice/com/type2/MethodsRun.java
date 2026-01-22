@@ -4,7 +4,7 @@ public class MethodsRun {
 
 	public static void main(String[] args) {
 		
-		MethodsReturn obj1 = new MethodsReturn();
+		MethodsWithReturnNoParams obj1 = new MethodsWithReturnNoParams();
 		
 		System.out.println(obj1.isEven());
 		System.out.println(obj1.isPrime());
