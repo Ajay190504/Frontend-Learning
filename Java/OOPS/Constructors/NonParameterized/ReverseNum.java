@@ -11,7 +11,7 @@ public class ReverseNum{
     }
     public static void main(String[] args) {
         ReverseNum rn = new ReverseNum();
-        System.err.println("Reversed number: "+rn.rev);
+        System.out.println("Reversed number: "+rn.rev);
     }
     
 }
