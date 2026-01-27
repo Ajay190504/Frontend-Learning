@@ -1,0 +1,62 @@
+Todays Lecture Agenda :
+
+Constructor in java : 
+
+1. Constructor is an special type of method whose name same as class Name
+2. Constructor does not have return type(Not Even void)
+3. when we create an object of the class Constructor will get Automatically called.
+4. suppose if we can not declared any constructor in class then Compiler provides default Constructor 
+5. suppose if u want to Execute Anything before method then that code write inside the Constructor
+6. Every class has Constructor  
+
+syntax : 
+
+ClassName(){
+
+}
+
+
+5.Types of Constructor :
+
+1. Default Constructor (Non-Parameterised Constructor)
+2. Parameterised Constructor 
+
+ClassName(int a , int b){
+
+}
+
+
+
+
+
+ref code : 
+
+
+
+
+package com.constr;
+
+public class Student {
+
+	Student() {
+		System.out.println("This is Constrs...!");
+	}
+
+	Student(int a, int b) {
+		System.out.println("This is Parameterised Constrs ...!");
+	}
+
+	public void m1() {
+		System.out.println("this is an m1 method");
+	}
+
+	public static void main(String[] args) {
+		Student s1 = new Student();
+		Student s = new Student(1, 1);
+		s.m1();
+
+	}
+
+}
+
+
