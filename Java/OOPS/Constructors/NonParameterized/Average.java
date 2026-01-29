@@ -1,3 +1,6 @@
+package constructors.nonparameterized;
+
+
 public class Average{
     int n1=5,n2=4,n3=6;
     float avg;

@@ -1,3 +1,5 @@
+package ifElse;
+
 public class NumDiv {
 
     public static void main(String[] args) {

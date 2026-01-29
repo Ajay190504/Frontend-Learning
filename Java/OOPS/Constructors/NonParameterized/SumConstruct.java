@@ -1,3 +1,5 @@
+package constructors.nonparameterized;
+
 public class SumConstruct{
     int sum=0;
     public SumConstruct() {

@@ -1,3 +1,5 @@
+package constructors.parameterized;
+
 public class  PrimeNo{
     boolean isPrime = true;
     public PrimeNo(int num) {

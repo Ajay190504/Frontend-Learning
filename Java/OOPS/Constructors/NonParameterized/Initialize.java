@@ -1,3 +1,4 @@
+package constructors.nonparameterized;
 public class Initialize{
     String name;
 

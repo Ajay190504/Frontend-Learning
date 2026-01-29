@@ -1,4 +1,5 @@
-// Printing all ASCCI Characters
+package day1;
+//Printing all ASCCI Characters
 public class Ascii {
 	public static void main(String[] args) {
 		

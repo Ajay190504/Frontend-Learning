@@ -1,3 +1,5 @@
+package day1;
+
 
 public class ProfitOrNot {
 
@@ -23,3 +25,4 @@ public class ProfitOrNot {
 	}
 
 }
+

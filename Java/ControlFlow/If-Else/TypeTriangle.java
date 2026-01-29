@@ -1,3 +1,5 @@
+package ifElse;
+
 public class TypeTriangle {
 
     public static void main(String[] args) {

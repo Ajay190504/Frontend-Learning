@@ -1,3 +1,6 @@
+package constructors.parameterized;
+
+
 public class ProdOfDigits{
     int prod = 1;
 

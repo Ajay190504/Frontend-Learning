@@ -1,3 +1,5 @@
+package constructors.nonparameterized;
+
 public class WaitConstruct{
 
     public WaitConstruct() {

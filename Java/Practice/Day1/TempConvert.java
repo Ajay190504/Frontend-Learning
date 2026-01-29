@@ -1,3 +1,5 @@
+package day1;
+
 import java.util.Scanner;
 public class TempConvert {
 	
@@ -12,12 +14,13 @@ public class TempConvert {
 		
 		System.out.println("Temp in Celcious: "+tempc+" Temp in fahrenheit: "+tempf);
 		
-		//from fahrenheit to celsius
+//		//from fahrenheit to celsius
 //		float tempc = sc.nextFloat();
 //		float tempf;
 //		tempc = (tempf-32)*(5/9.0f);
 //		
 //		System.out.println("Temp in Fahrenheit: "+tempf+" Temp in Celsius: "+tempc);
 //		
+		sc.close();
 	}
 }

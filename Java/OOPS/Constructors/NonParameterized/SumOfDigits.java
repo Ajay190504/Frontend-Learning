@@ -1,3 +1,5 @@
+package constructors.nonparameterized;
+
 public class SumOfDigits{
     int num=1234;
     int sum=0;
@@ -18,3 +20,4 @@ public class SumOfDigits{
     
     
 }
+

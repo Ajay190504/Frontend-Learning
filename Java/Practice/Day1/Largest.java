@@ -1,3 +1,5 @@
+package day1;
+
 
 public class Largest {
 
@@ -21,3 +23,4 @@ public class Largest {
 	}
 
 }
+

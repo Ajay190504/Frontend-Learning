@@ -1,3 +1,5 @@
+package day1;
+
 
 public class PositiveNot {
 	public static void main(String[] args) {
@@ -14,3 +16,4 @@ public class PositiveNot {
 		}
 	}
 }
+

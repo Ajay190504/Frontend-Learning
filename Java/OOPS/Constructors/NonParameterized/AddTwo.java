@@ -1,3 +1,4 @@
+package constructors.nonparameterized;
 
 import java.util.Scanner;
 

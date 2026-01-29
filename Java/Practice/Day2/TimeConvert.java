@@ -1,3 +1,5 @@
+package day2;
+
 public class TimeConvert {
     public static void main(String[] args) {
         int totalMinutes = 130; // Example input

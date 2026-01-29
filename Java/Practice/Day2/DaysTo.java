@@ -1,3 +1,5 @@
+package day2;
+
 public class DaysTo {
     public static void main(String[] args) {
         int days = 5; // Example input
@@ -13,6 +15,7 @@ public class DaysTo {
 
         //days to weeks
         int weeks = days / 7;
+        
         //days to months (approximate 30 days per month)
         int months = days / 30;
 
@@ -51,6 +54,5 @@ public class DaysTo {
         System.out.println(hours + " hours is equal to " + daysFromHours);
         System.out.println(minutes + " minutes is equal to "+ daysFromMinutes);
         System.out.println(seconds + " seconds is equal to "+ daysFromSeconds);
-        
     }
 }

@@ -1,3 +1,5 @@
+package ifElse;
+
 public class VoteContest {
 
     public static void main(String[] args) {

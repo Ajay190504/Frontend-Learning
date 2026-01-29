@@ -1,4 +1,4 @@
-package Day7;
+package day7;
 import java.util.Scanner;
 public class ReversedNumber {
 
@@ -16,6 +16,7 @@ public class ReversedNumber {
 		}
 		
 		System.out.println("Reversed number : "+reversedNum);
+		
 			}
 
 }

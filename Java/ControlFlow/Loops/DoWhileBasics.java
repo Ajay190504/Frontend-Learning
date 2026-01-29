@@ -1,3 +1,5 @@
+package loops;
+
 public class DoWhileBasics {
     public static void main(String[] args) {
 
