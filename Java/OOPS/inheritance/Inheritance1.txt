@@ -1,0 +1,110 @@
+Last Lecture Agenda : 
+
+Imp for Scanner class : 
+
+
+Enter ur Age
+int myAge = sc.nextInt(); 
+
+sc.nextLine();   // used this when u r taking input integer value then String between this used nextLine(); as moves to next line 
+
+Enter ur name
+String myName = sc.nextLine(); 
+
+
+
+
+Todays Lecture Agenda : 
+
+OOPs : main piler Inheritance(IS-A Relationship) : 
+
+Inheritance is an core concepts of Object Oriented Programming.
+it is an approach where one class can acquired all the properties(V + M) of another class
+Parent : super class
+child : sub class 
+it is an process where child(sub class) can acquired all the properties of parent(super class)
+it is achieved by extends keywords  
+inheritance is also called as IS-A Relational 
+
+Example : 
+
+Dog IS-A Animal 
+Square IS-A Shapes 
+Sonali IS-A Girls 
+Apple IS-A Fruits 
+
+
+note : inheritance is used to achieved Run Time Polymorphism(method Overriding)
+       Reusability  
+
+
+
+
+syntax : 
+
+
+public class Parent {
+ // V + M
+}
+
+
+public class Child extends Parent {
+
+}
+
+
+
+
+
+
+
+
+Example : 
+
+
+Meta(P) : 
+
+Register();
+login();
+logout();
+
+
+Instagram(C) :
+addStroy();
+uploadReels();
+
+FaceBook(C) :
+addPost();
+addComment(); 
+
+
+
+MainClass :
+
+we can create object of Child Classes and 
+Access parent as well as child class Properties 
+
+
+
+Example : 
+
+Car(P) :
+
+color;
+model;
+price;
+
+  myEngine();
+  myStering();
+
+
+Bmw(C);
+autoPark();
+
+MgHector(C): 
+ inbuildFunction();
+
+
+ 
+
+
