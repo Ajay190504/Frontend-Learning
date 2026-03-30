@@ -1,8 +1,14 @@
-**SQL Practice Questions :** 
+**SQL Practice Questions :**
 
 
 
-**Orders Table:** 
+
+
+**Orders Table:**
+
+**..........................................................................................................................................**
+
+
 
 **| order\_id | customer\_name | city    | product\_name  | category    | price    | quantity | order\_date | payment\_mode     | status     |**
 
@@ -50,6 +56,10 @@
 
 
 
+**..........................................................................................................................................**
+
+
+
 
 
 **1) Display all orders placed by customers from Pune**
@@ -88,7 +98,7 @@ SELECT \* FROM orders WHERE category = 'Electronics' OR category = 'Clothing';
 
 
 
-**7) Find orders where customer name is exactly Ajay, Amit, or Anjali**  
+**7) Find orders where customer name is exactly Ajay, Amit, or Anjali**
 
 SELECT \* FROM orders WHERE customer\_name IN ('Ajay', 'Amit', 'Anjali');
 
