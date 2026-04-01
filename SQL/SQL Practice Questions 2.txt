@@ -1,0 +1,145 @@
+Employee Table :
+
+..........................................................................................................................................
+
+| emp_id | emp_name | salary | department  | hire_date  | location |
+| ------ | -------- | ------ | ----------- | ---------- | -------- |
+| 1      | Ajay     | 50000  | HR          | 2023-01-10 | Pune     |
+| 2      | Ravi     | 70000  | Development | 2022-03-15 | Mumbai   |
+| 3      | Sneha    | 45000  | Testing     | 2023-07-20 | Pune     |
+| 4      | Priya    | 80000  | Development | 2021-11-25 | Mumbai   |
+| 5      | Amit     | 30000  | Support     | 2023-05-18 | Delhi    |
+| 6      | Neha     | 90000  | Development | 2020-09-10 | Pune     |
+| 7      | Kiran    | 25000  | Testing     | 2023-02-14 | Mumbai   |
+| 8      | Pooja    | 60000  | HR          | 2022-12-01 | Delhi    |
+| 9      | Rahul    | 55000  | Support     | 2021-06-30 | Pune     |
+| 10     | Meena    | 75000  | Development | 2023-08-12 | Mumbai   |
+
+..........................................................................................................................................
+
+Questions and SQL Answers
+
+1. Find names and salaries of employees working in HR.
+
+SELECT emp_name, salary
+FROM employee
+WHERE department = 'HR';
+
+2. Find employees whose salary is greater than the average salary of the company.
+
+SELECT emp_name, salary
+FROM employee
+WHERE salary > (SELECT AVG(salary) FROM employee);
+
+3. Find employees receiving the minimum salary in the Testing department.
+
+SELECT *
+FROM employee
+WHERE department = 'Testing'
+AND salary = (SELECT MIN(salary) FROM employee WHERE department='Testing');
+
+4. Find total salary expenditure of the company.
+
+SELECT SUM(salary) FROM employee;
+
+5. Find average salary of employees in Development department.
+
+SELECT AVG(salary) 
+FROM employee 
+WHERE department = 'Development';
+
+6. Find total salary of employees in HR and Support departments.
+
+SELECT SUM(salary) 
+FROM employee 
+WHERE department IN ('HR','Support');
+
+7. Find employees whose salary is greater than the average salary of Development department.
+
+SELECT *
+FROM employee
+WHERE salary > (SELECT AVG(salary) FROM employee WHERE department='Development');
+
+8. Find total salary expenditure in Pune location.
+
+SELECT SUM(salary) 
+FROM employee 
+WHERE location='Pune';
+
+9. Find employees hired in the year 2023.
+
+SELECT *
+FROM employee
+WHERE hire_date BETWEEN '2023-01-01' AND '2023-12-31';
+
+10. Count employees in Mumbai location.
+
+SELECT COUNT(*) 
+FROM employee 
+WHERE location='Mumbai';
+
+11. Find employees whose salary equals maximum salary in company.
+
+SELECT *
+FROM employee
+WHERE salary = (SELECT MAX(salary) FROM employee);
+
+12. Find departments where average salary > 60000.
+
+SELECT department, AVG(salary)
+FROM employee
+GROUP BY department
+HAVING AVG(salary) > 60000;
+
+13. Find employees whose salary is less than the company average.
+
+SELECT *
+FROM employee
+WHERE salary < (SELECT AVG(salary) FROM employee);
+
+14. Find second highest salary in the company.
+
+SELECT MAX(salary) 
+FROM employee 
+WHERE salary < (SELECT MAX(salary) FROM employee);
+
+15. Find department with highest total salary.
+
+SELECT department 
+FROM employee 
+GROUP BY department 
+ORDER BY SUM(salary) DESC 
+LIMIT 1;
+
+16. Find employees earning more than their department average.
+
+SELECT *
+FROM employee e
+WHERE salary > (SELECT AVG(salary) FROM employee WHERE department=e.department);
+
+17. Find departments with more than 3 employees.
+
+SELECT department
+FROM employee
+GROUP BY department
+HAVING COUNT(*) > 3;
+
+18. Find employees hired in same year as highest paid employee.
+
+SELECT *
+FROM employee
+WHERE YEAR(hire_date) IN (SELECT YEAR(hire_date) FROM employee WHERE salary = (SELECT MAX(salary) FROM employee));
+
+19. Find employees whose salary is less than maximum in their department.
+
+SELECT *
+FROM employee e
+WHERE salary < (SELECT MAX(salary) FROM employee WHERE department=e.department);
+
+20. Find location with highest total salary.
+
+SELECT location
+FROM employee
+GROUP BY location
+ORDER BY SUM(salary) DESC
+LIMIT 1;
