@@ -1,0 +1,234 @@
+SQL JOIN PRACTICE QUESTIONS
+
+..........................................................................................................................................
+
+1. TABLE STRUCTURE :
+
+i) Orders Table:
+
+CREATE TABLE orders (
+    orderId INT PRIMARY KEY,
+    orderName VARCHAR(50),
+    orderDate DATE,
+    status VARCHAR(20)
+);
+
+ii) Products Table:
+
+CREATE TABLE products (
+    prodId INT PRIMARY KEY,
+    prodName VARCHAR(50),
+    price DECIMAL(10,2),
+    quantity INT,
+    manfDate DATE,
+    type VARCHAR(30)
+);
+
+iii) Customers Table:
+
+CREATE TABLE customers (
+    custId INT PRIMARY KEY,
+    custName VARCHAR(50),
+    email VARCHAR(100),
+    mobNo VARCHAR(15),
+    address VARCHAR(100),
+    country VARCHAR(50),
+    state VARCHAR(50),
+    paymentMode VARCHAR(20),
+    custStatus VARCHAR(20),
+    orderId INT,
+    prodId INT,
+    FOREIGN KEY (orderId) REFERENCES orders(orderId),
+    FOREIGN KEY (prodId) REFERENCES products(prodId)
+);
+
+..........................................................................................................................................
+
+2. INSERTING DATA
+
+INSERT INTO orders VALUES
+(1, 'Laptop Order', '2024-01-10', 'Delivered'),
+(2, 'Mobile Order', '2024-02-15', 'Pending'),
+(3, 'TV Order', '2024-03-01', 'Cancelled'),
+(4, 'Tablet Order', '2024-03-05', 'Delivered'),
+(5, 'Camera Order', '2024-03-10', 'Pending');
+
+INSERT INTO products VALUES
+(101, 'Laptop', 60000, 10, '2023-12-01', 'Electronics'),
+(102, 'Mobile', 20000, 25, '2024-01-01', 'Electronics'),
+(103, 'Television', 40000, 5, '2023-11-15', 'Electronics'),
+(104, 'Tablet', 15000, 8, '2024-02-10', 'Electronics'),
+(105, 'Camera', 30000, 6, '2024-02-20', 'Electronics');
+
+INSERT INTO customers VALUES
+(1, 'Ajay', 'ajay@gmail.com', '9876543210', 'Pune', 'India', 'Maharashtra', 'UPI', 'Active', 1, 101),
+(2, 'Rahul', 'rahul@gmail.com', '9876543211', 'Mumbai', 'India', 'Maharashtra', 'Card', 'Active', 2, 102),
+(3, 'Sneha', 'sneha@gmail.com', '9876543212', 'Delhi', 'India', 'Delhi', 'Cash', 'Inactive', 3, 103),
+(4, 'Priya', 'priya@gmail.com', '9876543213', 'Bangalore', 'India', 'Karnataka', 'UPI', 'Active', 4, 104),
+(5, 'Amit', 'amit@gmail.com', '9876543214', 'Pune', 'India', 'Maharashtra', 'Card', 'Active', 1, 101),
+(6, 'Neha', 'neha@gmail.com', '9876543215', 'Ahmedabad', 'India', 'Gujarat', 'UPI', 'Active', NULL, NULL);
+
+..........................................................................................................................................
+
+3. TABLE VISUALIZATION
+
+i) ORDERS TABLE
+
++---------+----------------+------------+-----------+
+| orderId | orderName      | orderDate  | status    |
++---------+----------------+------------+-----------+
+| 1       | Laptop Order   | 2024-01-10 | Delivered |
+| 2       | Mobile Order   | 2024-02-15 | Pending   |
+| 3       | TV Order       | 2024-03-01 | Cancelled |
+| 4       | Tablet Order   | 2024-03-05 | Delivered |
+| 5       | Camera Order   | 2024-03-10 | Pending   |
++---------+----------------+------------+-----------+
+
+ii) PRODUCTS TABLE
+
++--------+-------------+--------+----------+------------+-------------+
+| prodId | prodName    | price  | quantity | manfDate   | type        |
++--------+-------------+--------+----------+------------+-------------+
+| 101    | Laptop      | 60000  | 10       | 2023-12-01 | Electronics |
+| 102    | Mobile      | 20000  | 25       | 2024-01-01 | Electronics |
+| 103    | Television  | 40000  | 5        | 2023-11-15 | Electronics |
+| 104    | Tablet      | 15000  | 8        | 2024-02-10 | Electronics |
+| 105    | Camera      | 30000  | 6        | 2024-02-20 | Electronics |
++--------+-------------+--------+----------+------------+-------------+
+
+iii) CUSTOMERS TABLE
+
++--------+----------+-------------+------------+------------+---------+--------+
+| custId | custName | state       | paymentMode| custStatus | orderId | prodId |
++--------+----------+-------------+------------+------------+---------+--------+
+| 1      | Ajay     | Maharashtra | UPI        | Active     | 1       | 101    |
+| 2      | Rahul    | Maharashtra | Card       | Active     | 2       | 102    |
+| 3      | Sneha    | Delhi       | Cash       | Inactive   | 3       | 103    |
+| 4      | Priya    | Karnataka   | UPI        | Active     | 4       | 104    |
+| 5      | Amit     | Maharashtra | Card       | Active     | 1       | 101    |
+| 6      | Neha     | Gujarat     | UPI        | Active     | NULL    | NULL   |
++--------+----------+-------------+------------+------------+---------+--------+
+
+..........................................................................................................................................
+
+4. QUESTIONS
+
+Q1. Write a SQL query to display the names of all customers along with the names of the orders they have placed.
+SELECT c.custName, o.orderName
+FROM customers c
+INNER JOIN orders o ON c.orderId = o.orderId;
+
+Q2. Write a SQL query to display the names of all customers along with the names of the products they have purchased.
+SELECT c.custName, p.prodName
+FROM customers c
+INNER JOIN products p ON c.prodId = p.prodId;
+
+Q3. Write a SQL query to display all orders along with the names of the customers who placed those orders.
+SELECT o.orderName, c.custName
+FROM orders o
+INNER JOIN customers c ON o.orderId = c.orderId;
+
+Q4. Write a SQL query to display all products along with the names of customers who purchased them.
+SELECT p.prodName, c.custName
+FROM products p
+INNER JOIN customers c ON p.prodId = c.prodId;
+
+Q5. Write a SQL query to display customers and their orders where order status is 'Delivered'.
+SELECT c.custName, o.orderName
+FROM customers c
+INNER JOIN orders o ON c.orderId = o.orderId
+WHERE o.status = 'Delivered';
+
+Q6. Write a SQL query to display all customers including those who have not placed any orders.
+SELECT c.custName, o.orderName
+FROM customers c
+LEFT JOIN orders o ON c.orderId = o.orderId;
+
+Q7. Write a SQL query to display customers who have not placed any orders.
+SELECT c.custName
+FROM customers c
+LEFT JOIN orders o ON c.orderId = o.orderId
+WHERE o.orderId IS NULL;
+
+Q8. Write a SQL query to display all orders including those that have no customers.
+SELECT o.orderName, c.custName
+FROM customers c
+RIGHT JOIN orders o ON c.orderId = o.orderId;
+
+Q9. Write a SQL query to display orders that do not have any customer.
+SELECT o.orderName
+FROM customers c
+RIGHT JOIN orders o ON c.orderId = o.orderId
+WHERE c.custId IS NULL;
+
+Q10. Write a SQL query to display complete purchase details (customer, product, order).
+SELECT c.custName, p.prodName, o.orderName
+FROM customers c
+INNER JOIN products p ON c.prodId = p.prodId
+INNER JOIN orders o ON c.orderId = o.orderId;
+
+Q11. Write a SQL query to display customers who used UPI payment mode.
+SELECT c.custName, o.orderName
+FROM customers c
+INNER JOIN orders o ON c.orderId = o.orderId
+WHERE c.paymentMode = 'UPI';
+
+Q12. Write a SQL query to display products purchased with price greater than 30000.
+SELECT c.custName, p.prodName
+FROM customers c
+INNER JOIN products p ON c.prodId = p.prodId
+WHERE p.price > 30000;
+
+Q13. Write a SQL query to perform FULL OUTER JOIN between customers and orders.
+SELECT c.custName, o.orderName
+FROM customers c
+LEFT JOIN orders o ON c.orderId = o.orderId
+UNION
+SELECT c.custName, o.orderName
+FROM customers c
+RIGHT JOIN orders o ON c.orderId = o.orderId;
+
+Q14. Write a SQL query to display unmatched customers and orders using FULL OUTER JOIN logic.
+SELECT c.custName, o.orderName
+FROM customers c
+LEFT JOIN orders o ON c.orderId = o.orderId
+WHERE o.orderId IS NULL
+UNION
+SELECT c.custName, o.orderName
+FROM customers c
+RIGHT JOIN orders o ON c.orderId = o.orderId
+WHERE c.custId IS NULL;
+
+Q15. Write a SQL query using SELF JOIN to display customers from the same state.
+SELECT c1.custName, c2.custName, c1.state
+FROM customers c1
+JOIN customers c2 
+ON c1.state = c2.state AND c1.custId <> c2.custId;
+
+Q16. Write a SQL query using SELF JOIN to display pairs of customers who used the same payment mode.
+SELECT c1.custName, c2.custName, c1.paymentMode
+FROM customers c1
+JOIN customers c2
+ON c1.paymentMode = c2.paymentMode AND c1.custId <> c2.custId;
+
+Q17. Write a SQL query using CROSS JOIN to display all possible combinations of customers and products.
+SELECT c.custName, p.prodName
+FROM customers c
+CROSS JOIN products p;
+
+Q18. Write a SQL query using CROSS JOIN to display all possible combinations of orders and products.
+SELECT o.orderName, p.prodName
+FROM orders o
+CROSS JOIN products p;
+
+Q19. Write a SQL query to count the number of customers who purchased each product.
+SELECT p.prodName, COUNT(*)
+FROM customers c
+INNER JOIN products p ON c.prodId = p.prodId
+GROUP BY p.prodName;
+
+Q20. Write a SQL query to display the names of customers who have not purchased any product.
+SELECT c.custName
+FROM customers c
+LEFT JOIN products p ON c.prodId = p.prodId
+WHERE p.prodId IS NULL;
