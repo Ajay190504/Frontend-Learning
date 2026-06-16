@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Form</title>
+</head>
+<body>
+
+    <h2>Employee Management System</h2>
+
+    <form action="Login.html" method="GET">
+
+        <!-- Text -->
+        <label>Employee ID:</label>
+        <input type="text" name="empId"><br><br>
+
+        <label>Full Name:</label>
+        <input type="text" name="fullName"><br><br>
+
+        <!-- Email -->
+        <label>Email Address:</label>
+        <input type="email" name="email"><br><br>
+
+        <!-- Password -->
+        <label>Password:</label>
+        <input type="password" name="password"><br><br>
+
+        <!-- Tel -->
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"><br><br>
+
+        <!-- URL -->
+        <label>Personal Website:</label>
+        <input type="url" name="website"><br><br>
+
+        <!-- Number -->
+        <label>Age:</label>
+        <input type="number" name="age"><br><br>
+
+        <label>Experience (Years):</label>
+        <input type="number" name="experience" step="0.5"><br><br>
+
+        <!-- Date & Time -->
+        <label>Date of Birth:</label>
+        <input type="date" name="dob"><br><br>
+
+        <label>Joining Time:</label>
+        <input type="time" name="joiningTime"><br><br>
+
+        <label>Joining Date & Time:</label>
+        <input type="datetime-local" name="joiningDateTime"><br><br>
+
+        <!-- File -->
+        <label>Resume Upload:</label>
+        <input type="file" name="resume"><br><br>
+
+        <label>Profile Picture:</label>
+        <input type="file" name="profilePic" accept="image/*"><br><br>
+
+        <label>Capture Employee Photo:</label>
+        <input type="file" name="capturePhoto" accept="image/*" capture="camera"><br><br>
+
+        <!-- Color -->
+        <label>Favorite Color:</label>
+        <input type="color" name="color"><br><br>
+
+        <!-- Salary Range (Improved) -->
+        <label>Salary Range:</label><br>
+        <span>10000</span>
+        <input type="range" id="salaryRange" name="salary" min="10000" max="100000" value="50000" 
+               oninput="salaryValue.value = salaryRange.value">
+        <span>100000</span>
+        <output id="salaryValue">50000</output>
+        <br><br>
+
+        <!-- Radio -->
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <br><br>
+
+        <!-- Checkbox -->
+        <label>Skills:</label>
+        <input type="checkbox" name="skills" value="java"> Java
+        <input type="checkbox" name="skills" value="python"> Python
+        <input type="checkbox" name="skills" value="js"> JavaScript
+        <br><br>
+
+        <!-- Select -->
+        <label>Department:</label>
+        <select name="department">
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Sales</option>
+        </select>
+        <br><br>
+
+        <!-- Search -->
+        <label>Search Employee:</label>
+        <input type="search" name="search"><br><br>
+
+        <!-- Hidden -->
+        <input type="hidden" name="token" value="12345ABC">
+
+        <!-- Buttons -->
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
+        <button type="button">Custom Action</button>
+        <br><br>
+
+        <!-- Image Submit 
+        <input type="image" src="https://via.placeholder.com/100x40?text=Submit" alt="Submit"> -->
+
+    </form>
+
+</body>
+</html>
